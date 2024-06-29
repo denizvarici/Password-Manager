@@ -103,3 +103,5 @@ class DatabaseManager:
             self.conn.commit()
         finally:
             self.close()
+
+    

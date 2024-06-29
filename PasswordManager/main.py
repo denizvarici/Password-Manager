@@ -3,13 +3,16 @@ import design
 import db
 import pw_generator
 import sqlite3
+import ospath
+
 
 from tabulate import tabulate
 
 def main():
     design.print_big_text("Developed by Deniz Varıcı")
     user_input = ""
-    mydb = db.DatabaseManager("Db.db")
+    mypath = ospath.FolderManager(r"C:\DVPasswords").check_directory()
+    mydb = db.DatabaseManager(r"C:\DVPasswords\Db.db")
     mydb.create_table() #create table if not exists
     user_input_list = ["quit", "exit", "help", "info", "list", "delete", "add", "update", "get", "hidden-list", "clear", "destroy"]
     try:
